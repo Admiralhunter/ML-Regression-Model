@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns; sns.set()
 
 from sklearn import metrics
 from sklearn import linear_model
@@ -9,7 +7,6 @@ from sklearn import linear_model
 
 
 
-plt.interactive(False)
 pd.set_option('display.max_columns', None)
 
 
@@ -19,10 +16,6 @@ data = pd.read_csv("D:\students-performance-in-exams\StudentsPerformance.csv")
 print(data.head(5))
 
 
-p = sns.countplot(x="math score", data = data, palette="muted")
-_ = plt.setp(p.get_xticklabels(), rotation=90)
-
-#plt.show()
 
 
 train = pd.get_dummies(data, columns=['gender', 'race/ethnicity', 'parental level of education', 'lunch', 'test preparation course'])
